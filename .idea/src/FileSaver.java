@@ -1,4 +1,8 @@
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -25,6 +29,15 @@ public class FileSaver {
      * with try-catch and show a friendly message instead of crashing.
      */
     public static int saveToFile(List<StudentLog> logs) throws IOException {
-        return 0; // TODO: replace
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MMM d, yyyy hh:mm a");
+
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(FILE_NAME,true))) {
+            for (StudentLog student : logs) {
+                br.write("|ID: " + student.getStudentId() + "| Name: " + student.getName() + "| Log-in Time: " + student.getLoginTime().format(fmt) + "|" + System.lineSeparator());
+                br.newLine();
+            }
+        }
+
+        return logs.size();
     }
 }

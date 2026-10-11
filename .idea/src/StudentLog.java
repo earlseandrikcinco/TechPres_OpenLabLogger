@@ -12,35 +12,32 @@ public class StudentLog {
 
     // ---- Fields (private = encapsulation) ----
 
-    // TODO: private String studentId;
-    // TODO: private String name;
-    // TODO: private LocalDateTime loginTime;   // set automatically, users never type the time
+    private String studentId;
+    private String name;
+    private LocalDateTime loginTime;   // set automatically, users never type the time
 
     // ---- Constructor ----
 
-    /**
-     * Creates a new log entry.
-     * TODO: assign studentId and name from the parameters.
-     * TODO: set loginTime = LocalDateTime.now().
-     */
+
     public StudentLog(String studentId, String name) {
-        // TODO
+        this.studentId = studentId;
+        this.name = name;
+        this.loginTime = LocalDateTime.now();
     }
 
-    // ---- Getters ----
 
-    /** TODO: return the student ID. */
     public String getStudentId() {
-        return ""; // TODO: replace
+        return studentId;
     }
 
-    /** TODO: return the student's name. */
+
     public String getName() {
-        return ""; // TODO: replace
+        return name;
     }
 
-    /** TODO: return the login time. */
     public LocalDateTime getLoginTime() {
-        return null; // TODO: replace
+        return loginTime;
     }
+
+
 }

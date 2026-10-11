@@ -1,3 +1,4 @@
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 /**
@@ -12,7 +13,7 @@ public class LabService {
 
     // ---- State ----
 
-    // TODO: private ArrayList<StudentLog> logs = new ArrayList<>();
+    private ArrayList<StudentLog> logs = new ArrayList<>();
 
     // ---- Actions ----
 
@@ -25,33 +26,28 @@ public class LabService {
         // TODO
     }
 
-    /**
-     * Option [2]: prints every active student.
-     * TODO: if the list is empty, print "No active sessions" (must not crash).
-     * TODO: otherwise use an enhanced for loop and print ID, name, and login time.
-     *       Format the time with DateTimeFormatter.ofPattern("MMM d, yyyy hh:mm a").
-     */
+
     public void viewLogs() {
-        // TODO
+        if (logs.isEmpty()) {
+            System.out.println("No active sessions");
+            return;
+        } else {
+
+            DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MMM d, yyyy hh:mm a");
+            for (StudentLog log : logs) {
+                System.out.println("|ID: " + log.getStudentId() + "| Name: " + log.getName() + "| Log-in Time: " + log.getLoginTime().format(fmt) +"|");
+            }
+        }
     }
 
-    /**
-     * Option [3]: removes a student by ID.
-     * Returns true if someone was removed, false if the ID was not found.
-     * TODO: compare IDs with .equals() (NOT ==). Great teaching moment.
-     * TODO: remove with removeIf, OR a classic loop that breaks right after remove.
-     *       Removing inside a for-each loop without breaking throws
-     *       ConcurrentModificationException (optional live demo).
-     */
+
     public boolean logout(String studentId) {
-        return false; // TODO: replace
+        return logs.removeIf(log -> log.getStudentId().equals(studentId));
     }
 
-    /**
-     * Gives FileSaver access to the list.
-     * TODO: return the list.
-     */
+
     public ArrayList<StudentLog> getLogs() {
-        return null; // TODO: replace
+
+        return logs;
     }
 }
