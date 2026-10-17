@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  *
  * IF YOU THINK ITS TOO MUCH FOR 6 MINUTES, PLEASE FEEL FREE TO DELETE SOME OF THE METHODS
@@ -41,7 +43,7 @@ public class JavaBasics {
      * TODO (talk): show that javac creates JavaBasics.class (bytecode), and java runs it on the JVM.
      */
     private static void demoHelloWorld() {
-        // TODO
+        System.out.println("Hello World");
     }
 
     // ---- 2. Variables and types ----
@@ -55,7 +57,15 @@ public class JavaBasics {
      * TODO (talk): final keyword for constants (final int MAX_PCS = 10;).
      */
     private static void demoVariablesAndTypes() {
-        // TODO
+        int age = 19;
+        double height = 162.5;
+        boolean isStudent = true;
+        char grade = 'A';
+        String name = "Lucky";
+
+        System.out.println("Age: " + age + ", Height: " + height
+                + ", Student: " + isStudent + ", Grade: " + grade
+                + ", Name: " + name);
     }
 
     // ---- 3. Operators and casting ----
@@ -67,7 +77,30 @@ public class JavaBasics {
      * TODO (talk): implicit widening (int -> double) vs explicit narrowing cast.
      */
     private static void demoOperatorsAndCasting() {
-        // TODO
+        int a = 7;
+        int b = 2;
+
+
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b));
+        System.out.println("Modulo: " + (a % b));
+
+
+        System.out.println("7 / 2 = " + (7 / 2));
+        System.out.println("7 / 2.0 = " + (7 / 2.0));
+
+
+        System.out.println("(int) 3.9 = " + (int) 3.9);
+
+
+        int number = 5;
+        number++;
+        System.out.println("After ++: " + number);
+
+        number += 3;
+        System.out.println("After += 3: " + number);
     }
 
     // ---- 4. Decisions ----
@@ -79,7 +112,34 @@ public class JavaBasics {
      *              unlike C / Python / JavaScript).
      */
     private static void demoControlFlow() {
-        // TODO
+        int score = 85;
+
+
+        if (score >= 90) {
+            System.out.println("Excellent!");
+        } else if (score >= 75) {
+            System.out.println("Passed!");
+        } else {
+            System.out.println("Failed!");
+        }
+
+
+        int choice = 2;
+
+        switch (choice) {
+            case 1:
+                System.out.println("One");
+                break;
+            case 2:
+                System.out.println("Two");
+                break;
+            case 3:
+                System.out.println("Three");
+                break;
+            default:
+                System.out.println("Invalid choice");
+                break;
+        }
     }
 
     // ---- 5. Loops ----
@@ -91,7 +151,26 @@ public class JavaBasics {
      * TODO (talk): arrays have a fixed size and a .length field (no parentheses!).
      */
     private static void demoLoops() {
-        // TODO
+
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+        }
+
+
+        int count = 3;
+        while (count >= 1) {
+            System.out.println(count);
+            count--;
+        }
+
+
+        int[] numbers = {10, 20, 30};
+
+        for (int n : numbers) {
+            System.out.println(n);
+        }
+
     }
 
     // ---- 6. Methods ----
@@ -102,14 +181,21 @@ public class JavaBasics {
      *              There are no free-standing functions in Java.
      */
     private static void demoMethods() {
-        // TODO
+        Scanner scan=new Scanner(System.in);
+        System.out.print("num1: ");
+        int num1=scan.nextInt();
+        System.out.print("num2: ");
+        int num2=scan.nextInt();
+
+        int ans =add(num1,num2);
+        System.out.println(ans);
     }
 
     /**
      * TODO: return the sum of a and b.
      */
     private static int add(int a, int b) {
-        return 0; // TODO: replace
+        return a+b;
     }
 
     // ---- 7. Strings ----
@@ -121,6 +207,22 @@ public class JavaBasics {
      * TODO (talk): Strings use double quotes, chars use single quotes.
      */
     private static void demoStrings() {
-        // TODO
+        String text = "lab work";
+
+        System.out.println("Length: " + text.length());
+        System.out.println("Uppercase: " + text.toUpperCase());
+        System.out.println("First character: " + text.charAt(0));
+        System.out.println("Substring: " + text.substring(0, 3));
+        System.out.println("Contains lab: " + text.contains("lab"));
+
+        String upper = text.toUpperCase();
+        System.out.println("Original: " + text);
+        System.out.println("New String: " + upper);
+
+        String name = "Lucky";
+        char letter = 'L';
+
+        System.out.println(name);
+        System.out.println(letter);
     }
 }
