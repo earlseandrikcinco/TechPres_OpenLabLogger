@@ -23,7 +23,14 @@ public class LabService {
      * TODO: print a confirmation including the automatic timestamp.
      */
     public void login(String studentId, String name) {
-        // TODO
+        StudentLog newStudent = new StudentLog(studentId, name);
+
+        logs.add(newStudent);
+
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MMM d, yyyy hh:mm a");
+        System.out.println("Logged in |ID: " + studentId + "| Name: " + name + "| Log-in Time: " + newStudent.getLoginTime().format(fmt) +"|");
+
+
     }
 
 
@@ -42,7 +49,18 @@ public class LabService {
 
 
     public boolean logout(String studentId) {
-        return logs.removeIf(log -> log.getStudentId().equals(studentId));
+        //one line version: return logs.removeIf(log -> log.getStudentId().equals(studentId));
+
+        //replace == with .equals later
+        for (StudentLog log : logs) {
+            if (log.getStudentId() == studentId) {
+                logs.remove(log);
+                return true;
+            }
+        }
+
+        return false;
+
     }
 
 

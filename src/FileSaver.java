@@ -1,5 +1,4 @@
 import java.io.BufferedWriter;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
@@ -33,7 +32,9 @@ public class FileSaver {
 
         try (BufferedWriter br = new BufferedWriter(new FileWriter(FILE_NAME,true))) {
             for (StudentLog student : logs) {
-                br.write("|ID: " + student.getStudentId() + "| Name: " + student.getName() + "| Log-in Time: " + student.getLoginTime().format(fmt) + "|" + System.lineSeparator());
+                br.write("|ID: " + student.getStudentId()
+                        + "| Name: " + student.getName()
+                        + "| Log-in Time: " + student.getLoginTime().format(fmt) + "|");
                 br.newLine();
             }
         }
