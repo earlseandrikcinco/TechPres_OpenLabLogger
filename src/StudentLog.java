@@ -15,14 +15,8 @@ public class StudentLog {
         this.loginTime = LocalDateTime.now();
     }
 
-    public String getStudentId() {
-        return studentId;
-    }
-    public String getName() {
-        return name;
-    }
-    public LocalDateTime getLoginTime() {
-        return loginTime;
-    }
+    public String getStudentId() {return studentId;}
+    public String getName() {return name;}
+    public LocalDateTime getLoginTime() {return loginTime;}
 
 }
