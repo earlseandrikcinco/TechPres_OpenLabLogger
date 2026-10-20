@@ -12,7 +12,7 @@ public class RemoveDemo {
         logs.add(new StudentLog("2222222", "Ben"));
         logs.add(new StudentLog("3333333", "Cy"));
 
-        // BROKEN: removing while looping. Run this first.
+        // BROKEN: removing while looping
         for (StudentLog log : logs) {
             if (log.getStudentId().equals("1111111")) {
                 logs.remove(log);

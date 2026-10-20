@@ -1,20 +1,14 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
- * Main - entry point, menu, and main loop.
- *
- * OWNER: Member 4 (Control flow and input section)
- * JAVA CONCEPTS TO TEACH: public static void main, while loop, switch (and why "break"
- *                         matters), Scanner, String.trim(), Integer.parseInt + try-catch
- */
+
 public class Main {
-    // main
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LabService lab = new LabService();
         boolean running = true;
-        // while loop
+
         while (running) {
 
             System.out.println();
