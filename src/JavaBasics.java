@@ -24,6 +24,22 @@ public class JavaBasics {
 
     // Variables
     private static void demoVariablesAndTypes() {
+        // Java Primitive Data Type Limits
+
+        // byte: 8 bits | -128 to 127
+        // short: 16 bits | -32,768 to 32,767
+        // int: 32 bits | -2,147,483,648 to 2,147,483,647
+        // long: 64 bits | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+
+        // float: 32 bits | Approximately ±1.4E-45 to ±3.4028235E38
+        // double: 64 bits | Approximately ±4.9E-324 to ±1.7976931348623157E308
+
+        // char: 16 bits | 0 to 65,535 (UTF-16 code unit)
+        // boolean: true or false
+
+        // String: Reference type (not a primitive data type)
+        // Stores a sequence of characters.
+
         int age = 19;
         double height = 162.5;
         boolean isStudent = true;
