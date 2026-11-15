@@ -5,11 +5,9 @@ import java.util.ArrayList;
 public class LabService {
 
     // State
-
     private ArrayList<StudentLog> logs = new ArrayList<>();
 
     // Actions
-
     public void login(String studentId, String name) {
         StudentLog newStudent = new StudentLog(studentId, name);
 
@@ -20,7 +18,6 @@ public class LabService {
 
 
     }
-
 
     public void viewLogs() {
         if (logs.isEmpty()) {
@@ -35,14 +32,9 @@ public class LabService {
         }
     }
 
-
     public boolean logout(String studentId) {
         return logs.removeIf(log -> log.getStudentId().equals(studentId));
     }
 
-
-    public ArrayList<StudentLog> getLogs() {
-
-        return logs;
-    }
+    public ArrayList<StudentLog> getLogs() {return logs;}
 }
